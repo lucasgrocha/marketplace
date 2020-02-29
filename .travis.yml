@@ -1,0 +1,24 @@
+language: ruby
+dist: bionic
+
+addons:
+  postgrest: "10"
+
+cache:
+  bundler: true
+
+rvm:
+  - 2.5.3
+
+services:
+  - postgresql
+
+before_install:
+  - gem install bundler
+
+before_script:
+  - psql -c 'create database marketplace_test;' -U postgres
+
+env:
+  script:
+    - bin/bundle exec rspec
