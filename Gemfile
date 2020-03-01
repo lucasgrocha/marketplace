@@ -7,6 +7,7 @@ gem 'devise'
 gem 'rolify'
 gem 'paper_trail'
 gem 'barkick'
+gem 'time_difference'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'

@@ -18,4 +18,12 @@ class User < ApplicationRecord
   def manager?
     self.has_role? :manager
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def under_age?
+    TimeDifference.between(DateTime.now.utc, birth_date).in_years <= 18
+  end
 end
