@@ -8,6 +8,10 @@ class Product < ApplicationRecord
 
   validate :validity_of_bar_code
 
+  def apply_coupon(coupon)
+    Coupon.apply_discount(self, coupon)
+  end
+
   private
 
   def validity_of_bar_code
