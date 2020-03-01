@@ -8,6 +8,8 @@ class Product < ApplicationRecord
 
   validate :validity_of_bar_code
 
+  private
+
   def validity_of_bar_code
     errors.add(:base, 'Invalid bar code') unless Barkick::GTIN.new(bar_code).valid?
   end

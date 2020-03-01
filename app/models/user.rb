@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   prepend UserMethods
 
+  has_one :address
   rolify
   has_paper_trail
 
