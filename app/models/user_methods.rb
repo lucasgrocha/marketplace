@@ -11,6 +11,10 @@ module UserMethods
     self.has_role? :manager
   end
 
+  def any_role?
+    admin? || customer? || manager?
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
