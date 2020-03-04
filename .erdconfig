@@ -2,6 +2,8 @@ attributes:
   - content
   - foreign_key
   - inheritance
+  - primary_key
+
 disconnected: true
 filename: erd
 filetype: pdf
