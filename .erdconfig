@@ -6,7 +6,7 @@ attributes:
 
 disconnected: true
 filename: erd
-filetype: pdf
+filetype: svg
 indirect: true
 inheritance: false
 markup: true

@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.com/lucasgrocha/marketplace.svg?branch=develop)](https://travis-ci.com/lucasgrocha/marketplace)
 
+
+### Database entities
+![Database entities](./erd.svg)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
