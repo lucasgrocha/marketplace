@@ -13,31 +13,31 @@ RSpec.describe User, type: :model do
     it 'verifies the under age user' do
       user.update(birth_date: '2015-05-05')
 
-      expect(user.under_age?).to be_truthy
+      expect(user).to be_under_age
     end
 
     it 'verifies the over age user' do
       user.update(birth_date: '2000-05-05')
 
-      expect(user.under_age?).to be_falsy
+      expect(user).not_to be_under_age
     end
   end
 
   context "Use user's rolify methods" do
     it 'verifies admin role' do
-      expect(create(:user, :admin).admin?).to be_truthy
+      expect(create(:user, :admin)).to be_admin
     end
 
     it 'verifies customer role' do
-      expect(create(:user, :customer).customer?).to be_truthy
+      expect(create(:user, :customer)).to be_customer
     end
 
     it 'verifies manager role' do
-      expect(create(:user, :manager).manager?).to be_truthy
+      expect(create(:user, :manager)).to be_manager
     end
 
     it 'returns false when user has not any role' do
-      expect(create(:user).any_role?).to be_falsy
+      expect(create(:user)).not_to be_any_role
     end
   end
 end

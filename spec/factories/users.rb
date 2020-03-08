@@ -7,8 +7,8 @@ FactoryBot.define do
     phone                 { FFaker::PhoneNumber.short_phone_number }
     timezone              { FFaker::Address.time_zone }
     birth_date            { FFaker::Time.date }
-    password              { 123456 }
-    password_confirmation { 123456 }
+    password              { 123_456 }
+    password_confirmation { 123_456 }
 
     trait :admin do
       after(:create) { |user| user.add_role(:admin) }

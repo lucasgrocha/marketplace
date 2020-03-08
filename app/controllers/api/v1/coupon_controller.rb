@@ -2,7 +2,7 @@ class Api::V1::CouponController < ApplicationController
   skip_forgery_protection
   before_action :check_presence
 
-  rescue_from ActiveRecord::InvalidForeignKey do |e|
+  rescue_from ActiveRecord::InvalidForeignKey do |_e|
     render json: { error: 'Could not find category' }, status: :not_found
   end
 
@@ -11,7 +11,7 @@ class Api::V1::CouponController < ApplicationController
 
     if @coupon.save
       respond_to do |format|
-        format.json { render json: coupon_params , status: :created }
+        format.json { render json: coupon_params, status: :created }
       end
     end
   end

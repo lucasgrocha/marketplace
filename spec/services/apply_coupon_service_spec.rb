@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ApplyCouponService do
   subject { described_class.new(product.id, coupon.code) }
+
   let(:product) { create(:product, price: 500) }
   let(:coupon)  { create(:coupon, category_id: product.category_id) }
 

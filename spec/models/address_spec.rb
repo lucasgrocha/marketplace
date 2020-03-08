@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Address, type: :model do
   it 'creates an address' do
-    expect {
+    expect do
       create(:address)
-    }.to change(Address, :count)
+    end.to change(described_class, :count)
   end
 
   it 'does not create an address with invalid building number' do

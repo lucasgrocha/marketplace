@@ -1,7 +1,7 @@
 class Coupon < ApplicationRecord
   belongs_to :category, optional: true
 
-  enum discount_type: [ :percentage, :fixed ]
+  enum discount_type: %i[percentage fixed]
   has_paper_trail
 
   before_save { code.upcase! }

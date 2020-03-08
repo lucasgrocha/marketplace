@@ -1,14 +1,14 @@
 module UserMethods
   def admin?
-    self.has_role? :admin
+    has_role? :admin
   end
 
   def customer?
-    self.has_role? :customer
+    has_role? :customer
   end
 
   def manager?
-    self.has_role? :manager
+    has_role? :manager
   end
 
   def any_role?

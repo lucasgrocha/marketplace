@@ -8,6 +8,7 @@ class ApplyCouponService
 
   def perform
     return 'Invalid Coupon' if invalid_coupon?
+
     calculate_discount
   end
 
@@ -26,7 +27,9 @@ class ApplyCouponService
     discount_amount = coupon.discount_amount
 
     return price - discount_amount if coupon.fixed?
-    return (price - ( price * discount_amount / 100 )).round(2) if coupon.percentage?
+    if coupon.percentage?
+      return (price - (price * discount_amount / 100)).round(2)
+    end
 
     0
   end

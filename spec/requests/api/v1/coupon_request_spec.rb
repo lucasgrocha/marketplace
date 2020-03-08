@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Coupons", type: :request do
+RSpec.describe 'Api::V1::Coupons', type: :request do
   context 'when has valid params' do
     let(:coupon_attributes) { attributes_for(:coupon, category_id: category.id) }
     let(:category) { build(:category) }
@@ -11,7 +11,7 @@ RSpec.describe "Api::V1::Coupons", type: :request do
 
     it 'creates a new coupon' do
       expect(response).to have_http_status(:created)
-      expect(Coupon.exists?(coupon_attributes)).to be_truthy
+      expect(Coupon).to exist(coupon_attributes)
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe "Api::V1::Coupons", type: :request do
     end
 
     it 'retuns 422 http status code' do
-      expect(response).to have_http_status(422)
+      expect(response).to have_http_status(:unprocessable_entity)
     end
 
     it 'returns error message' do
@@ -39,7 +39,7 @@ RSpec.describe "Api::V1::Coupons", type: :request do
     end
 
     it 'returns 404 http status code' do
-      expect(response).to have_http_status(404)
+      expect(response).to have_http_status(:not_found)
     end
 
     it 'returns category not found' do
