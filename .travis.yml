@@ -21,4 +21,4 @@ before_script:
 
 env:
   script:
-    - bin/bundle exec rspec
+    - bin/bundle exec rspec -fd
